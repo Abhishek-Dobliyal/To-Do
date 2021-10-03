@@ -34,6 +34,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## Backend
 
+### Install dependencies
+```
+pip install -r requirements.txt
+```
+
 ### Run server
 ```
 python app.py
