@@ -1,3 +1,3 @@
 # To-Do
-![]("todo-demo.gif")
+![](./todo-demo.gif)
 Get it done now or never...
