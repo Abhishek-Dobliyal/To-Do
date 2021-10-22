@@ -13,7 +13,7 @@ def api():
         incoming_data = request.get_json()
         title = incoming_data["title"]
         desc = incoming_data["desc"]
-        is_completed = incoming_data["isCompleted"]
+        is_completed = incoming_data["completed"]
         database.add({"title": title, "desc": desc, "completed": is_completed})
         # Since Python and JS handle large numbers differently. Therefore, trim down the id to just 6 digits so its the same on both
         task_id = database.getByQuery({"title": title})[0]["id"]
@@ -30,6 +30,18 @@ def delete_task():
         is_successful = True
     return jsonify({"deleted": is_successful})
 
+@app.route("/complete", methods=["POST"])
+def complete_task():
+    incoming_data = request.get_json()
+    id = incoming_data["id"]
+    task = database.getByQuery({"id": id})[0]
+
+    database.updateByQuery({"id": id}, 
+                            {"completed": not task["completed"]})
+
+    is_successful = True
+    return jsonify({"update": is_successful})
+
 @app.route("/update", methods=["GET", "POST"])
 def update_task():
     is_successful = False
@@ -38,7 +50,7 @@ def update_task():
         id_to_update = incoming_data["id"]
         new_title = incoming_data["title"]
         new_desc = incoming_data["desc"]
-        is_completed = incoming_data["isCompleted"]
+        is_completed = incoming_data["completed"]
         database.updateByQuery({"id": id_to_update}, 
                                 {"title": new_title, 
                                 "desc": new_desc, 
