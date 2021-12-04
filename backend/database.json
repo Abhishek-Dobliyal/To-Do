@@ -1,1 +1,16 @@
-{"data": [{"title": "Play HayDay", "desc": "Upgrade Bakery to level 10", "completed": false, "id": 12345}, {"title": "Complete EE assignment", "desc": "Finish EE unit 2 assignment by Monday", "completed": false, "id": 840335638982401678}, {"title": "New title", "desc": "New title added!", "completed": false, "id": 323763}]}
+{
+   "data": [
+      {
+         "title": "Lorem ipsum dolor sit amet",
+         "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget nulla",
+         "completed": true,
+         "id": 195480
+      },
+      {
+         "title": "Get groceries",
+         "desc": "Milk, Bread and apples",
+         "completed": false,
+         "id": 569934
+      }
+   ]
+}
